@@ -43,7 +43,7 @@ df.head(20)
 
 df.sort_values("helpful", ascending=False).head(20)
 ###################################################
-# GÖREV 1: Average Rating'i Güncel Yorumlara Göre Hesaplayınız ve Var Olan Average Rating ile Kıyaslayınız.
+# GÖREV 1: Average Rating'i Güncel Yorumlara Göre Hesaplayınız ve Var Olan Average Rating ile kıyaslayalım.
 ###################################################
 
 # Paylaşılan veri setinde kullanıcılar bir ürüne puanlar vermiş ve yorumlar yapmıştır.
@@ -52,14 +52,14 @@ df.sort_values("helpful", ascending=False).head(20)
 
 
 ###################################################
-# Adım 1: Veri Setini Okutunuz ve Ürünün Ortalama Puanını Hesaplayınız.
+# Adım 1: Veri Setini Okutunuz ve Ürünün Ortalama Puanını Hesaplayalım.
 ###################################################
 
 df["overall"].mean()
 # 4.587589013224822
 
 ###################################################
-# Adım 2: Tarihe Göre Ağırlıklı Puan Ortalamasını Hesaplayınız.
+# Adım 2: Tarihe Göre Ağırlıklı Puan Ortalamasını hesaplayalım.
 ###################################################
 df.sort_values("day_diff", ascending=False).head(20)
 #max = 1064
@@ -88,7 +88,7 @@ time_based_weighted_average(df)
 
 
 ###################################################
-# Görev 2: Ürün için Ürün Detay Sayfasında Görüntülenecek 20 Review'i Belirleyiniz.
+# Görev 2: Ürün için Ürün Detay Sayfasında Görüntülenecek 20 Review'i belirleyelim.
 ###################################################
 
 ###################################################
@@ -106,7 +106,7 @@ df.sort_values("helpful_no", ascending=False).head()
 
 
 ###################################################
-# Adım 2. score_pos_neg_diff, score_average_rating ve wilson_lower_bound Skorlarını Hesaplayıp Veriye Ekleyiniz
+# Adım 2. score_pos_neg_diff, score_average_rating ve wilson_lower_bound Skorlarını Hesaplayıp Veriye ekleyelim
 ###################################################
 
 def score_pos_neg_diff(helpful_yes, helpful_no):
@@ -166,7 +166,7 @@ df["wilson_lower_bound"] = df.apply(lambda x: wilson_lower_bound(x["helpful_yes"
 df.sort_values("wilson_lower_bound", ascending=False).head(20)
 
 ##################################################
-# Adım 3. 20 Yorumu Belirleyiniz ve Sonuçları Yorumlayınız.
+# Adım 3. 20 Yorumu Belirleyiniz ve Sonuçları yorumlayalım.
 ###################################################
 
 df.sort_values("wilson_lower_bound", ascending=False).head(20)
